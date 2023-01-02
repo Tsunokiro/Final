@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block title %}
+    {{titulo}}
+{% endblock  %}
+
+{% block content %}
+    <form action="{% url 'save_carrera' %}" method="POST">
+        {% csrf_token %}
+        <label for="Nombre">Nombre </label>
+        <input type="text" name="nombre" />
+
+        <label for="Nombre_Corto">Nombre Corto </label>
+        <input type="text" name="nombre_corto" >
+        
+        <label for="Imagen"> Imagen </label>
+        <input type="file" name="imagen" accept="image/png, .jpeg, .jpg"/>
+        
+        <label for="Estado">Estado </label>
+        <input name="estado" >
+        
+        <input type="submit" value="Agregar" />
+    </form>
+{% endblock  %}

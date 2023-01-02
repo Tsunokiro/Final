@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf=8" />
+    <title>
+        {% block title %}
+        
+        {% endblock %}
+        | Camarena - Zevallos
+    </title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
+</head>
+<body>
+    <header>
+        <div id="logotipo">
+            <img src="{% static 'images/UNTELS_LOGO.png' %}"/>
+            <h1>LP3 S1 - EF</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'cursos' %}">Cursos</a>
+            </li>
+            <li>
+                <a href="{% url 'crear_curso' %}">Crear Curso</a>
+            </li>
+            <li>
+                <a href="{% url 'carreras' %}"> Carreras </a>
+            </li>
+            <li>
+                <a href="{% url 'crear_carrera' %}"> Crear Carrera </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
+
+    <div id="content">
+        <div class="box">
+            {% block content %}
+                <strong>Contenido en layout (Padre) </strong>
+            {% endblock %}  
+        </div>
+        
+    </div>
+    <footer>
+        UNTELS - Lenguaje de Programacion III &copy; Camarena - Zevallos
+    </footer>
+</body>
+
+</html>

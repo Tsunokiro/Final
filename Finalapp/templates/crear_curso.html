@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{titulo}}
+{% endblock %}
+
+{% block content %}
+    <form action="{% url 'save_curso' %}" method="POST">
+        {% csrf_token %}
+        <label for="Nombre">Nombre </label>
+        <input type="text" name="nombre" />
+
+        <label for="Codigo">Codigo </label>
+        <input type="text" name="codigo" >
+        
+        <label for="Horas"> Horas </label>
+        <input name="horas" />
+        
+        <label for="Credito">Credito </label>
+        <input name="credito" >
+        
+        <label for="Estado">Estado </label>
+        <input name="estado" >
+        
+        <input type="submit" value="Agregar" />
+    </form>
+{% endblock  %}
